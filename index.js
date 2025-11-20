@@ -1,7 +1,7 @@
 // ===============================
 // Google Apps Script Web App URL
 // ===============================
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzcs71exDivfH4ASjBZFRE1n0zKjyFzo2kRX9FSo1eaQ3gclGEy-Faf4NRgnErjDZRRBQ/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz5ZEKXnaWgZwt9zFxwcN2uB9GIjCabJY6qr4KGKuNOlz5B0XEzo7yuC199XrJFpTJ-fQ/exec";
 
 // ===============================
 // Form Selector References
