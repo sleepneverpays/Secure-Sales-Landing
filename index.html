@@ -367,11 +367,11 @@ footer {
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 32px; /* Smaller font size for mobile */
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 16px; /* Smaller font size for mobile */
     }
 
     .search-bubble {
@@ -533,6 +533,14 @@ footer {
     
     .vertical-text span {
         font-size: 20px !important;
+    }
+    
+    .hero h1 {
+        font-size: 28px; /* Even smaller for very small screens */
+    }
+    
+    .hero p {
+        font-size: 14px; /* Even smaller for very small screens */
     }
 }
 
@@ -753,8 +761,8 @@ footer {
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Find Your Dream Home Today</h1>
-            <p>Discover the perfect property from our extensive collection of premium listings</p>
+            <h1>Get The Value You Deserve Today</h1>
+            <p>Get In Contact With A Representative Today. Get What You Deserve In Total Transparency.</p>
         </div>
     </section>
 
@@ -1256,10 +1264,10 @@ footer {
                         successMessage.classList.add('show');
                         this.style.display = 'none';
                         
-                        // After 3 seconds, force refresh the page without any popup
+                        // After 5 seconds, force refresh the page without any popup
                         setTimeout(function() {
                             window.location.reload();
-                        }, 3000);
+                        }, 5000);
                     }
                     
                     // Here you would typically send the data to your Google Apps Script
