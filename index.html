@@ -299,18 +299,18 @@ footer {
     backdrop-filter: blur(10px);
     border-top: 1px solid #374151;
     color: white;
-    padding: 60px 0 20px;
+    padding: 40px 0 20px;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .footer-column h3 {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 20px;
     color: #e2e8f0;
 }
@@ -320,7 +320,7 @@ footer {
 }
 
 .footer-column ul li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .footer-column ul li a {
@@ -330,6 +330,25 @@ footer {
 }
 
 .footer-column ul li a:hover {
+    color: #60a5fa;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #d1d5db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
     color: #60a5fa;
 }
 
@@ -432,6 +451,15 @@ footer {
         max-width: 90% !important;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .social-links {
+        justify-content: center;
     }
 }
 
@@ -970,16 +998,16 @@ footer {
                 </div>
                 <!-- Updated 6th property -->
                 <div class="property-card">
-                    <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/6e75f32764c0b7fc75213176e0ec288f-uncropped_scaled_within_1536_1152.webp')"></div>
+                    <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/96746fb0969df1395886de9fdd1ce256-uncropped_scaled_within_1536_1152.webp')"></div>
                     <div class="property-info">
                         <div class="property-price">$154,800</div>
-                        <div class="property-address">1200 E Jackson St, Muncie, IN 47305</div>
+                        <div class="property-address">2300 N Country Club Rd, Muncie, IN 47303</div>
                         <div class="property-details">
                             <span>🛏️ 3 beds</span>
                             <span>🚿 2 baths</span>
                             <span>📏 1,405 sq ft</span>
                         </div>
-                        <p class="property-description">Beautifully maintained home in a prime location with modern updates throughout. Features an open floor plan, updated kitchen with stainless steel appliances, and a spacious backyard perfect for entertaining.</p>
+                        <p class="property-description">Charming ranch-style home in a desirable neighborhood near the country club. Features a spacious living room with fireplace, updated kitchen, and a large backyard perfect for entertaining. This well-maintained property offers great value in a prime location.</p>
                     </div>
                 </div>
             </div>
@@ -1049,6 +1077,20 @@ footer {
                         <li><a href="#properties">Properties</a></li>
                         <li><a href="#about">Contact</a></li>
                     </ul>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/securesalesrepresentatives" target="_blank">
+                            <span class="icon icon-instagram"></span>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://x.com/SecureSalesReps" target="_blank">
+                            <span class="icon icon-twitter"></span>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="https://linktr.ee/securesalesrepresentatives" target="_blank">
+                            <span class="icon icon-link"></span>
+                            <span>Linktree</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
@@ -1056,9 +1098,6 @@ footer {
                         <li>📞 <a href="tel:+17655469932">+1 (765) 546-9932</a></li>
                         <li>✉️ <a href="mailto:securesalesrepresentatives@gmail.com">securesalesrepresentatives@gmail.com</a></li>
                         <li>📍 Muncie, IN</li>
-                        <li><span class="icon icon-instagram"></span> <a href="https://www.instagram.com/securesalesrepresentatives" target="_blank">Instagram</a></li>
-                        <li><span class="icon icon-twitter"></span> <a href="https://x.com/SecureSalesReps" target="_blank">Twitter (X)</a></li>
-                        <li><span class="icon icon-link"></span> <a href="https://linktr.ee/securesalesrepresentatives" target="_blank">Linktree</a></li>
                     </ul>
                 </div>
             </div>
@@ -1217,9 +1256,9 @@ footer {
                         successMessage.classList.add('show');
                         this.style.display = 'none';
                         
-                        // After 3 seconds, force refresh the page
+                        // After 3 seconds, force refresh the page without any popup
                         setTimeout(function() {
-                            location.reload(true);
+                            window.location.reload();
                         }, 3000);
                     }
                     
@@ -1230,6 +1269,5 @@ footer {
             });
         });
     </script>
-    <script src="index.js"></script>
 </body>
 </html>
