@@ -570,6 +570,16 @@ footer {
 .success-message.show {
     display: block;
 }
+
+.success-message h3 {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.success-message p {
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
     </style>
 </head>
 <body>
@@ -690,7 +700,7 @@ footer {
                     </form>
                     <div id="successMessage" class="success-message">
                         <h3>Thank You!</h3>
-                        <p>Your information has been submitted successfully. A representative will contact you shortly.</p>
+                        <p>Your Information Has Been Submitted Successfully. A Representative Will Contact You Shortly.</p>
                     </div>
                 </div>
                 <div class="text-container">
@@ -750,7 +760,7 @@ footer {
                     </form>
                     <div id="successMessage2" class="success-message">
                         <h3>Thank You!</h3>
-                        <p>Your information has been submitted successfully. A representative will contact you shortly.</p>
+                        <p>Your Information Has Been Submitted Successfully. A Representative Will Contact You Shortly.</p>
                     </div>
                 </div>
                 <div class="text-container">
@@ -1040,7 +1050,7 @@ footer {
                     const formData = new FormData(this);
                     const data = Object.fromEntries(formData);
                     
-                    // Show success message
+                    // Show success message and hide form
                     const successMessage = this.nextElementSibling;
                     if (successMessage && successMessage.classList.contains('success-message')) {
                         successMessage.classList.add('show');
@@ -1051,14 +1061,8 @@ footer {
                     // For now, we'll just log it to the console
                     console.log('Form submitted:', data);
                     
-                    // Reset form after submission
-                    setTimeout(() => {
-                        this.reset();
-                        if (successMessage) {
-                            successMessage.classList.remove('show');
-                        }
-                        this.style.display = 'block';
-                    }, 5000);
+                    // DO NOT reset form or hide success message automatically
+                    // User must refresh the page to submit again
                 });
             });
         });
