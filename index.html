@@ -375,14 +375,7 @@ footer {
     }
 
     .vertical-text {
-        flex-direction: row;
-        justify-content: space-around;
-        margin-top: 30px;
-        height: auto;
-    }
-
-    .vertical-text span {
-        font-size: 24px !important;
+        display: none; /* Hide vertical text on mobile */
     }
     
     .side-nav-container {
@@ -580,9 +573,113 @@ footer {
     text-transform: capitalize;
     margin-bottom: 0;
 }
+
+/* Terms of Service Modal Styles */
+.terms-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.terms-content {
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #374151;
+    border-radius: 12px;
+    padding: 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.terms-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.terms-link {
+    color: #60a5fa;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.terms-link:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 2rem 0 1rem;
+    cursor: pointer;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+.terms-checkbox label {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.terms-disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
     </style>
 </head>
 <body>
+    <!-- Terms of Service Modal -->
+    <div class="terms-modal" id="termsModal">
+        <div class="terms-content">
+            <h2 class="terms-title">
+                <span class="icon icon-award"></span>
+                Terms Of Service Agreement
+            </h2>
+            
+            <a href="https://docs.google.com/document/d/14xgWbQQB7sJF2sshgVBK6V_z7ksFHq5SY-yjNS4d2Z4/edit?usp=sharing" 
+               target="_blank" 
+               class="terms-link">
+                Terms of Service (SSR) LLC. All Rights Reserved. Copyright © 2025.
+            </a>
+            
+            <div class="terms-checkbox">
+                <input type="checkbox" id="agreeCheckbox">
+                <label for="agreeCheckbox">I Have Read And I Fully Agree To The Terms Of Service Provided By Secure Sales Representatives (SSR) LLC.</label>
+            </div>
+            
+            <button class="btn terms-disabled" id="continueButton" disabled>
+                Continue to Website
+                <span class="icon icon-external-link"></span>
+            </button>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header-nav">
         <img src="https://i.pinimg.com/736x/19/7b/18/197b1859b5027c6ea2b75861ef9460a5.jpg" alt="SSR Logo" class="header-logo">
@@ -858,6 +955,33 @@ footer {
                         <p class="property-description">Beautiful contemporary home featuring modern amenities and stylish finishes. Includes two bedrooms, two bathrooms, and 1,500 square feet of living space. Situated in a desirable West Muncie location with excellent community amenities.</p>
                     </div>
                 </div>
+                <!-- Added two more properties -->
+                <div class="property-card">
+                    <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/6e75f32764c0b7fc75213176e0ec288f-uncropped_scaled_within_1536_1152.webp')"></div>
+                    <div class="property-info">
+                        <div class="property-price">$355,000</div>
+                        <div class="property-address">2500 W Purdue Ave, Muncie, IN 47304</div>
+                        <div class="property-details">
+                            <span>🛏️ 4 beds</span>
+                            <span>🚿 3 baths</span>
+                            <span>📏 3,564 sq ft</span>
+                        </div>
+                        <p class="property-description">Well-priced home offering four bedrooms and three bathrooms in a convenient West Muncie location. Features beautiful spacious comfortable living spaces and a practical layout ideal for families or investors. Great value in today's market.</p>
+                    </div>
+                </div>
+                <div class="property-card">
+                    <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/6e75f32764c0b7fc75213176e0ec288f-uncropped_scaled_within_1536_1152.webp')"></div>
+                    <div class="property-info">
+                        <div class="property-price">$299,000</div>
+                        <div class="property-address">1200 E Jackson St, Muncie, IN 47305</div>
+                        <div class="property-details">
+                            <span>🛏️ 3 beds</span>
+                            <span>🚿 2.5 baths</span>
+                            <span>📏 2,200 sq ft</span>
+                        </div>
+                        <p class="property-description">Beautifully maintained home in a prime location with modern updates throughout. Features an open floor plan, updated kitchen with stainless steel appliances, and a spacious backyard perfect for entertaining.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -932,6 +1056,9 @@ footer {
                         <li>📞 <a href="tel:+17655469932">+1 (765) 546-9932</a></li>
                         <li>✉️ <a href="mailto:securesalesrepresentatives@gmail.com">securesalesrepresentatives@gmail.com</a></li>
                         <li>📍 Muncie, IN</li>
+                        <li><span class="icon icon-instagram"></span> <a href="https://www.instagram.com/securesalesrepresentatives" target="_blank">Instagram</a></li>
+                        <li><span class="icon icon-twitter"></span> <a href="https://x.com/SecureSalesReps" target="_blank">Twitter (X)</a></li>
+                        <li><span class="icon icon-link"></span> <a href="https://linktr.ee/securesalesrepresentatives" target="_blank">Linktree</a></li>
                     </ul>
                 </div>
             </div>
@@ -942,6 +1069,40 @@ footer {
     </footer>
 
     <script>
+        // Terms of Service Modal Functionality
+        const termsModal = document.getElementById('termsModal');
+        const agreeCheckbox = document.getElementById('agreeCheckbox');
+        const continueButton = document.getElementById('continueButton');
+
+        // Check if user has already agreed to terms
+        if (!localStorage.getItem('termsAgreed')) {
+            termsModal.style.display = 'flex';
+        }
+
+        agreeCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                continueButton.classList.remove('terms-disabled');
+                continueButton.disabled = false;
+            } else {
+                continueButton.classList.add('terms-disabled');
+                continueButton.disabled = true;
+            }
+        });
+
+        continueButton.addEventListener('click', function() {
+            if (agreeCheckbox.checked) {
+                localStorage.setItem('termsAgreed', 'true');
+                termsModal.style.display = 'none';
+            }
+        });
+
+        // Prevent closing modal by clicking outside
+        termsModal.addEventListener('click', function(e) {
+            if (e.target === termsModal) {
+                e.stopPropagation();
+            }
+        });
+
         // Tab functionality
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab');
