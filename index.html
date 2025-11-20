@@ -955,7 +955,6 @@ footer {
                         <p class="property-description">Beautiful contemporary home featuring modern amenities and stylish finishes. Includes two bedrooms, two bathrooms, and 1,500 square feet of living space. Situated in a desirable West Muncie location with excellent community amenities.</p>
                     </div>
                 </div>
-                <!-- Added two more properties -->
                 <div class="property-card">
                     <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/6e75f32764c0b7fc75213176e0ec288f-uncropped_scaled_within_1536_1152.webp')"></div>
                     <div class="property-info">
@@ -969,15 +968,16 @@ footer {
                         <p class="property-description">Well-priced home offering four bedrooms and three bathrooms in a convenient West Muncie location. Features beautiful spacious comfortable living spaces and a practical layout ideal for families or investors. Great value in today's market.</p>
                     </div>
                 </div>
+                <!-- Updated 6th property -->
                 <div class="property-card">
                     <div class="property-image" style="background-image: url('https://photos.zillowstatic.com/fp/6e75f32764c0b7fc75213176e0ec288f-uncropped_scaled_within_1536_1152.webp')"></div>
                     <div class="property-info">
-                        <div class="property-price">$299,000</div>
+                        <div class="property-price">$154,800</div>
                         <div class="property-address">1200 E Jackson St, Muncie, IN 47305</div>
                         <div class="property-details">
                             <span>🛏️ 3 beds</span>
-                            <span>🚿 2.5 baths</span>
-                            <span>📏 2,200 sq ft</span>
+                            <span>🚿 2 baths</span>
+                            <span>📏 1,405 sq ft</span>
                         </div>
                         <p class="property-description">Beautifully maintained home in a prime location with modern updates throughout. Features an open floor plan, updated kitchen with stainless steel appliances, and a spacious backyard perfect for entertaining.</p>
                     </div>
@@ -1216,14 +1216,16 @@ footer {
                     if (successMessage && successMessage.classList.contains('success-message')) {
                         successMessage.classList.add('show');
                         this.style.display = 'none';
+                        
+                        // After 3 seconds, force refresh the page
+                        setTimeout(function() {
+                            location.reload(true);
+                        }, 3000);
                     }
                     
                     // Here you would typically send the data to your Google Apps Script
                     // For now, we'll just log it to the console
                     console.log('Form submitted:', data);
-                    
-                    // DO NOT reset form or hide success message automatically
-                    // User must refresh the page to submit again
                 });
             });
         });
